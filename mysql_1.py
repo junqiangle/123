@@ -3,7 +3,7 @@ import redis
 # 连接redis 库
 db = redis.Redis(
     host='47.106.98.155',
-    port='10086'
+    port=''
 )
 # 获取redis 库里的数据  数据是字典形式
 db_user=db.hgetall('user')

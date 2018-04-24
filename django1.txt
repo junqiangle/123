@@ -1,0 +1,30 @@
+ 查看mongo安装位置 whereis mongod
+  pip freeze   查看有那些安装包
+activate  激活
+deactivate   退出
+django-admin + startproject +创建项目名字
+liunx  上需要单独装虚拟环境
+python manages.py runserver ip:端口（ip 可以省略）
+window下安装pip install virtuelenv   虚拟脚本
+virtualenv --no-site-packages +准备建立的文件名字 无多余脚本复制  只要pip 脚本和wheel 脚本
+进入新进文件下的在进入Scripts 文件下激活虚拟环境执行 activate (激活)
+查看 Django 是否安装好  django-admin
+
+创建django 项目 django-admin startproject 项目名称
+
+LANGUAGE_CODE 语言编码  “zh-hans” 中文编码
+python manage.py runserver 启动服务器   python manage.py runserver (ip: 端口可选  当不写默认端口8000和本机ip地址）
+python manage.py startapp +创建子项目名称
+把子项目添加到总项目中去 （高耦合低内聚）
+在子项目中添加url地址管理 
+把views处理方法添加到URL管理器中
+把子项目中的url添加到总项目中URL地址管理中
+
+在views中添加contol 处理方式
+
+数据库迁移 django 本身有一个数据库   
+django和mysql 连接起来
+在 总项目中初始文件中init.py 中执行 导入数据库模块 
+#-*-coding:utf8-*-
+import pymysql
+pymysql.install_as_MySQLdb()

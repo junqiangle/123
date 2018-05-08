@@ -95,9 +95,11 @@ class Goods(models.Model):
 
 
 class UserModel(models.Model):
-    username = models.CharField(max_length=32, unique=True)
+    username = models.CharField(max_length=32, unique=True) # unique 表示唯一标识
+    # username = models.CharField(max_length=32)
     password = models.CharField(max_length=256)
-    email = models.CharField(max_length=64, unique=True)
+    email = models.CharField(max_length=64, unique=True)#  表示唯一标识
+    # email = models.CharField(max_length=64)
     sex = models.BooleanField(default=False)
     icon = models.ImageField(upload_to='icons')  # 头像
     is_delete = models.BooleanField(default=False)
@@ -133,3 +135,10 @@ class OrderGoodModel(models.Model):
 
     class Meta:
         db_table = 'axf_order_goods'
+class TicketModel(models.Model):
+    ticket = models.CharField(max_length=64)
+    out_time = models.IntegerField()
+    u_id = models.ForeignKey(UserModel)
+
+    class Meta:
+        db_table = 'axf_user_ticket'

@@ -12,12 +12,12 @@ $(function () {
             $("#password_confirm_info").html("两次输入不一致").css("color","red");
         }
     })
-
+    //
     $("#username").change(function () {
 
-    //
+
         var username = $("#username").val();
-        $.getJSON("/axf/checkuser/",{"username":username},function (data) {
+        $.getJSON("/axf/name/",{"username":username},function (data) {
 
             console.log(data);
 
@@ -28,7 +28,7 @@ $(function () {
             }
 
 
-        })
+         })
 
 
     })

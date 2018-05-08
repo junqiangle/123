@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     # 'user',
     'goods'
 ]
-
+# 'goods' 对项目进行配置
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,10 +47,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'utils.midie.authmiddleware',
 ]
-
+# 'utils.midie.authmiddleware'  # 对中间键进行注册
 ROOT_URLCONF = 'axf.urls'
-
+#  'DIRS': [os.path.join(BASE_DIR, 'templates')], 对模板文件进行配置路径
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -71,7 +72,7 @@ WSGI_APPLICATION = 'axf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+# 对数据库设置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -106,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'zh-hans' # 对语言进行设置
 
-TIME_ZONE = 'Asia/Shanghai'
+TIME_ZONE = 'Asia/Shanghai'# 对时区进行设置
 
 USE_I18N = True
 
@@ -119,8 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # 对静态文件配置路径
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+MEDIA_URL = '/static/uploads/' # 配置图片路径
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/uploads/icons') # 上传图片路径
